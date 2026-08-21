@@ -1,0 +1,12 @@
+{
+  "name": "party-games",
+  "version": "1.0.0",
+  "description": "Count-the-Jar (photo jellybean counter) and Texas Hold'em poker with tutorial",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/run-tests.js"
+  },
+  "license": "MIT"
+}

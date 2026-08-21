@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texas Hold'em — Party Games</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/poker/poker.css">
+</head>
+<body>
+  <div class="wrap wide">
+    <header class="page-head">
+      <a href="/" class="back">&larr; All games</a>
+      <h1>Texas Hold'em</h1>
+      <p>No-Limit against three house bots. New to poker? Open the <strong>Learn</strong> tab first.</p>
+    </header>
+
+    <main class="poker-layout">
+      <section class="table-zone">
+        <div id="table" class="table">
+          <div class="seats" id="seats"></div>
+
+          <div class="board-area">
+            <div class="pot-line">Pot <span id="potAmount">0</span></div>
+            <div class="community" id="community"></div>
+            <div class="phase-line" id="phaseLine"></div>
+          </div>
+
+          <div class="banner hidden" id="banner"></div>
+        </div>
+
+        <div class="hint-box" id="hintBox"></div>
+
+        <div class="action-bar" id="actionBar">
+          <button class="btn danger" id="foldBtn">Fold</button>
+          <button class="btn secondary" id="checkBtn">Check</button>
+          <button class="btn" id="callBtn">Call</button>
+          <div class="raise-group">
+            <button class="btn raise" id="raiseBtn">Raise</button>
+            <input type="range" id="raiseSlider" min="0" max="100" value="0">
+            <span class="raise-amount" id="raiseAmount">0</span>
+          </div>
+          <div class="quick-group">
+            <button class="chip-btn" data-quick="min">Min</button>
+            <button class="chip-btn" data-quick="half">1/2 pot</button>
+            <button class="chip-btn" data-quick="pot">Pot</button>
+            <button class="chip-btn" data-quick="allin">All-in</button>
+          </div>
+        </div>
+
+        <div class="game-actions">
+          <button class="btn secondary small" id="nextHandBtn">Deal next hand</button>
+          <button class="btn secondary small" id="newGameBtn">New game</button>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <nav class="tabs">
+          <button class="tab active" data-tab="log">Log</button>
+          <button class="tab" data-tab="learn">Learn</button>
+          <button class="tab" data-tab="quiz">Quiz</button>
+        </nav>
+
+        <div class="tab-page active" id="tab-log">
+          <div class="log" id="logBox"></div>
+        </div>
+
+        <div class="tab-page" id="tab-learn">
+          <div class="lesson">
+            <h3>The goal</h3>
+            <p>Win chips by winning pots. You get two private <em>hole cards</em>. Five <em>community cards</em> land face-up on the table. Make your best <strong>five-card hand</strong> from any combination of the seven, or make everyone else fold.</p>
+          </div>
+
+          <div class="lesson">
+            <h3>Hand rankings (best to worst)</h3>
+            <ol class="rank-list">
+              <li><span class="rank-name">Royal Flush</span><span class="cards">A&spades; K&spades; Q&spades; J&spades; 10&spades;</span></li>
+              <li><span class="rank-name">Straight Flush</span><span class="cards">9&hearts; 8&hearts; 7&hearts; 6&hearts; 5&hearts;</span></li>
+              <li><span class="rank-name">Four of a Kind</span><span class="cards">Q Q Q Q 7</span></li>
+              <li><span class="rank-name">Full House</span><span class="cards">J J J 4 4</span></li>
+              <li><span class="rank-name">Flush</span><span class="cards">A&clubs; J&clubs; 8&clubs; 6&clubs; 2&clubs;</span></li>
+              <li><span class="rank-name">Straight</span><span class="cards">10 9 8 7 6</span></li>
+              <li><span class="rank-name">Three of a Kind</span><span class="cards">8 8 8 K 3</span></li>
+              <li><span class="rank-name">Two Pair</span><span class="cards">K K 9 9 5</span></li>
+              <li><span class="rank-name">One Pair</span><span class="cards">10 10 A 7 2</span></li>
+              <li><span class="rank-name">High Card</span><span class="cards">A Q 9 5 3</span></li>
+            </ol>
+            <p class="note">Suits never break ties. An ace can be high (A-K-Q-J-10) or low (5-4-3-2-A).</p>
+          </div>
+
+          <div class="lesson">
+            <h3>Blinds &amp; betting rounds</h3>
+            <p>The <strong>dealer button</strong> rotates each hand. The two players to its left post forced bets: the <em>small blind</em> and <em>big blind</em>. Then four betting rounds happen:</p>
+            <ol>
+              <li><strong>Preflop</strong> &mdash; after hole cards are dealt.</li>
+              <li><strong>Flop</strong> &mdash; after three community cards.</li>
+              <li><strong>Turn</strong> &mdash; after a fourth community card.</li>
+              <li><strong>River</strong> &mdash; after the fifth. Last bets, then showdown.</li>
+            </ol>
+            <p>If betting makes everyone equal and more than one player remains, hands are compared at <em>showdown</em> and the best five-card hand takes the pot.</p>
+          </div>
+
+          <div class="lesson">
+            <h3>Your options on your turn</h3>
+            <ul>
+              <li><strong>Fold</strong> &mdash; throw your hand away, lose no more chips.</li>
+              <li><strong>Check</strong> &mdash; pass when nobody has bet.</li>
+              <li><strong>Call</strong> &mdash; match the current bet.</li>
+              <li><strong>Raise</strong> &mdash; increase it. Others must call, re-raise, or fold.</li>
+              <li><strong>All-in</strong> &mdash; bet every chip. You can then win only the part of the pot you matched.</li>
+            </ul>
+            <p class="note">Quick math: if the pot is 100 and you must call 20, you need to win about 1 time in 6 to break even. That is called <em>pot odds</em>.</p>
+          </div>
+
+          <div class="lesson">
+            <h3>Beginner tips</h3>
+            <ul>
+              <li>Fold most hands before the flop. Two big cards or a pocket pair? Play on.</li>
+              <li>Acting <em>last</em> is an advantage &mdash; you see what everyone did first.</li>
+              <li>Matched bets after the river mean nothing if your hand cannot win. Bet for value or fold.</li>
+              <li>Suited connectors (7&hearts; 8&hearts;) like cheap pots; big pairs like raising wars.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-page" id="tab-quiz">
+          <div id="quizBox"></div>
+          <div class="quiz-score" id="quizScore"></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/lib/poker-engine.js"></script>
+  <script src="/lib/ai.js"></script>
+  <script src="/poker/poker.js"></script>
+</body>
+</html>

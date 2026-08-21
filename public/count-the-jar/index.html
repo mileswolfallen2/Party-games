@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count the Jar — Party Games</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/count-the-jar/jar.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="page-head">
+      <a href="/" class="back">&larr; All games</a>
+      <h1>Count the Jar</h1>
+      <p>Photograph a jar of candy. The counter sees every bean &mdash; even the hidden ones. Everyone else just guesses.</p>
+    </header>
+
+    <main class="jar-layout">
+      <section class="panel">
+        <h2>1. The jar</h2>
+        <div id="dropZone" class="drop-zone">
+          <p><strong>Drop a photo here</strong> or click to choose</p>
+          <p class="hint">Phone camera works great. Fill the frame with the jar.</p>
+          <input type="file" id="fileInput" accept="image/*" capture="environment" hidden>
+        </div>
+
+        <div id="previewWrap" class="preview-wrap hidden">
+          <div class="photo-frame">
+            <img id="photo" alt="Jar photo">
+            <svg id="overlay" viewBox="0 0 0 0" preserveAspectRatio="none"></svg>
+          </div>
+          <div class="photo-actions">
+            <button class="btn secondary" id="toggleOverlay">Show detection</button>
+            <button class="btn secondary" id="newPhoto">New photo</button>
+          </div>
+        </div>
+
+        <div id="statusLine" class="status-line"></div>
+      </section>
+
+      <section class="panel">
+        <h2>2. Guesses</h2>
+        <div id="guessRows" class="guess-rows"></div>
+        <button class="btn secondary small" id="addPlayer">+ Add guesser</button>
+
+        <div class="reveal-row">
+          <button class="btn" id="revealBtn" disabled>Reveal official count</button>
+          <label class="peek"><input type="checkbox" id="peekCount"> peek at count (host only)</label>
+        </div>
+
+        <div id="resultBox" class="result-box hidden">
+          <div class="big-count-row">
+            <span>Official count</span>
+            <strong id="officialCount">0</strong>
+          </div>
+          <ol id="rankingList"></ol>
+          <div class="result-actions">
+            <button class="btn" id="nextRound">Next round, same crew</button>
+            <button class="btn danger" id="resetAll">Reset everything</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel standings">
+        <h2>Standings</h2>
+        <ol id="standingsList" class="standings-list"><li class="muted">No rounds played yet.</li></ol>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/count-the-jar/jar.js"></script>
+</body>
+</html>

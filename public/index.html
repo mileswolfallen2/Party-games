@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Party Games</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Party Games</h1>
+      <p>Two crowd-pleasers, one laptop, everyone's phone as a controller.</p>
+    </header>
+
+    <main class="games">
+      <a class="game-card" href="/count-the-jar/">
+        <span class="tag tag-pink">Vision Party Game</span>
+        <h2>Count the Jar</h2>
+        <p>Snap a photo of any candy jar. The server counts every bean &mdash; overlaps and hidden ones included. Everyone else guesses. Closest wins bragging rights.</p>
+        <span class="play">Play &rarr;</span>
+      </a>
+
+      <a class="game-card" href="/poker/">
+        <span class="tag tag-teal">Cards &amp; Chips</span>
+        <h2>Texas Hold'em</h2>
+        <p>Play No-Limit Hold'em against three house bots, or start with the built-in tutorial that teaches hands, betting rounds, and table etiquette from zero.</p>
+        <span class="play">Play &rarr;</span>
+      </a>
+    </main>
+
+    <section class="host-panel">
+      <div>
+        <h2>Hosting tonight?</h2>
+        <p>Open this page on a big screen, then have everyone scan the QR code to follow along on their phones.</p>
+      </div>
+      <button class="btn" id="hostBtn">Show join QR code</button>
+    </section>
+
+    <footer>Built for couches, kitchens, and county fairs.</footer>
+  </div>
+
+  <div class="modal-backdrop" id="qrModal">
+    <div class="modal">
+      <h3>Join the party</h3>
+      <p class="sub">Point your phone camera at the code to open the games.</p>
+      <div class="qr-box" id="qrBox"></div>
+      <div class="url-line" id="urlLine"></div>
+      <div class="placeholder-note" id="placeholderNote"></div>
+      <div class="actions">
+        <button class="btn secondary" id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/qr.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
