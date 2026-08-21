@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forehead Charades</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="charades.css">
+</head>
+<body>
+  <div class="blob pink"></div>
+  <div class="blob teal"></div>
+
+  <div class="wrap narrow">
+    <div class="page-head">
+      <a class="back" href="../">&larr; All games</a>
+      <h1>Forehead Charades</h1>
+      <p>Hold the phone to your forehead so everyone can read the word. Your team acts it out &mdash; you guess. Got it or skip it before time runs out.</p>
+    </div>
+
+    <section class="panel setup" id="setupScreen">
+      <h2>Teams</h2>
+      <div class="team-rows" id="teamRows"></div>
+      <button class="btn secondary small" id="addTeam">+ Add team</button>
+
+      <h2>Decks</h2>
+      <div class="deck-picker" id="deckPicker"></div>
+
+      <h2>Seconds per turn</h2>
+      <div class="time-picker" id="timePicker"></div>
+
+      <button class="btn big gold" id="startBtn">Start round</button>
+    </section>
+
+    <section class="panel hidden" id="playScreen">
+      <div class="hud">
+        <span class="team-label" id="hudTeam"></span>
+        <span class="timer-label" id="hudTimer"></span>
+        <span class="score-label" id="hudScore"></span>
+      </div>
+      <div class="word-card" id="wordCard">
+        <div class="word-hint">phone on forehead &mdash; friends act it out</div>
+        <div class="word-text" id="wordText"></div>
+      </div>
+      <div class="play-controls">
+        <button class="btn half danger" id="skipBtn">Skip</button>
+        <button class="btn half teal" id="gotBtn">Got it!</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="recapScreen">
+      <h2 id="recapTitle"></h2>
+      <ul class="recap-list" id="recapList"></ul>
+      <div class="result-actions">
+        <button class="btn teal" id="nextTeamBtn">Next team</button>
+        <button class="btn secondary" id="endGameBtn">End game</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="finalScreen">
+      <h2>Final scores</h2>
+      <ol class="podium" id="podiumList"></ol>
+      <div class="result-actions">
+        <button class="btn gold" id="rematchBtn">Rematch</button>
+        <button class="btn secondary" id="newSetupBtn">Change setup</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="words.js"></script>
+  <script src="charades.js"></script>
+</body>
+</html>

@@ -4,27 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Party Games</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="blob pink"></div>
+  <div class="blob teal"></div>
+  <div class="blob violet"></div>
+
+  <div class="marquee"><span>tonight only &mdash; five games, zero setup &mdash; bring your phone &mdash; loser does dishes &mdash; tonight only &mdash; five games, zero setup &mdash; bring your phone &mdash; loser does dishes &mdash;&nbsp;</span></div>
+
   <div class="wrap">
-    <header>
-      <h1>Party Games</h1>
-      <p>Two crowd-pleasers, one laptop, everyone's phone as a controller.</p>
+    <header class="hero">
+      <h1>Party <span class="flip">Games</span></h1>
+      <p>One laptop, one TV, everyone's phone. Five crowd-pleasers built for couches, kitchens and county fairs.</p>
     </header>
 
     <main class="games">
-      <a class="game-card" href="/count-the-jar/">
-        <span class="tag tag-pink">Vision Party Game</span>
+      <a class="ticket" href="count-the-jar/">
+        <span class="shine"></span>
+        <span class="tag tag-pink">Vision Showdown</span>
         <h2>Count the Jar</h2>
-        <p>Snap a photo of any candy jar. The server counts every bean &mdash; overlaps and hidden ones included. Everyone else guesses. Closest wins bragging rights.</p>
+        <p>Snap a photo of any candy jar. The counter sees every bean &mdash; overlaps and hidden ones included. Everyone else just guesses. Closest wins.</p>
         <span class="play">Play &rarr;</span>
       </a>
 
-      <a class="game-card" href="/poker/">
+      <a class="ticket" href="poker/">
+        <span class="shine"></span>
         <span class="tag tag-teal">Cards &amp; Chips</span>
         <h2>Texas Hold'em</h2>
-        <p>Play No-Limit Hold'em against three house bots, or start with the built-in tutorial that teaches hands, betting rounds, and table etiquette from zero.</p>
+        <p>No-Limit Hold'em against three house bots, with a full tutorial that teaches hands, betting rounds and table etiquette from zero.</p>
+        <span class="play">Play &rarr;</span>
+      </a>
+
+      <a class="ticket" href="charades/">
+        <span class="shine"></span>
+        <span class="tag tag-gold">Act It Out</span>
+        <h2>Forehead Charades</h2>
+        <p>Hold the phone to your forehead while your friends act, sing or describe. Tilt-free controls, team scores, six decks of chaos.</p>
+        <span class="play">Play &rarr;</span>
+      </a>
+
+      <a class="ticket" href="truth-or-dare/">
+        <span class="shine"></span>
+        <span class="tag tag-violet">Spin the Wheel</span>
+        <h2>Truth or Dare</h2>
+        <p>The wheel picks a victim, you pick their fate. Three spice levels from icebreaker to legend-making. Regret guaranteed or your money back.</p>
+        <span class="play">Play &rarr;</span>
+      </a>
+
+      <a class="ticket" href="reaction/">
+        <span class="shine"></span>
+        <span class="tag tag-teal">Fastest Thumbs</span>
+        <h2>Reaction Duel</h2>
+        <p>Two players, one screen, split in half. Wait for green, slam your side. False starts lose. Best of five settles who has the fastest thumbs.</p>
         <span class="play">Play &rarr;</span>
       </a>
     </main>
@@ -32,12 +64,19 @@
     <section class="host-panel">
       <div>
         <h2>Hosting tonight?</h2>
-        <p>Open this page on a big screen, then have everyone scan the QR code to follow along on their phones.</p>
+        <p>Open this page on the big screen, then have everyone scan the QR code to follow along on their phones.</p>
       </div>
-      <button class="btn" id="hostBtn">Show join QR code</button>
+      <button class="btn gold" id="hostBtn">Show join QR code</button>
     </section>
 
-    <footer>Built for couches, kitchens, and county fairs.</footer>
+    <footer>
+      Built for couches, kitchens, and county fairs.
+      <div style="margin-top:8px">
+        <a href="docs/privacy.html" style="color:var(--muted)">Privacy</a> &middot;
+        <a href="docs/terms.html" style="color:var(--muted)">Terms</a> &middot;
+        <a href="docs/license.html" style="color:var(--muted)">License</a>
+      </div>
+    </footer>
   </div>
 
   <div class="modal-backdrop" id="qrModal">
@@ -53,8 +92,8 @@
     </div>
   </div>
 
-  <script src="/config.js"></script>
-  <script src="/qr.js"></script>
-  <script src="/app.js"></script>
+  <script src="config.js"></script>
+  <script src="qr.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

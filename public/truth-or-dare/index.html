@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truth or Dare</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="tod.css">
+</head>
+<body>
+  <div class="blob violet"></div>
+  <div class="blob pink"></div>
+
+  <div class="wrap narrow">
+    <div class="page-head">
+      <a class="back" href="../">&larr; All games</a>
+      <h1>Truth or Dare</h1>
+      <p>The wheel picks a victim. They pick their fate. Pick a spice level before you start &mdash; you can't blame the wheel.</p>
+    </div>
+
+    <section class="panel setup" id="setupScreen">
+      <h2>Players</h2>
+      <div class="player-rows" id="playerRows"></div>
+      <button class="btn secondary small" id="addPlayer">+ Add player</button>
+
+      <h2>Spice level</h2>
+      <div class="spice-picker" id="spicePicker"></div>
+
+      <button class="btn big gold" id="startBtn">To the wheel</button>
+    </section>
+
+    <section class="panel arena hidden" id="gameScreen">
+      <div class="wheel-zone">
+        <div class="wheel-pointer"></div>
+        <div class="wheel" id="wheel"></div>
+        <div class="wheel-hub">SPIN</div>
+      </div>
+      <div class="victim-line" id="victimLine">Spin the wheel</div>
+
+      <div class="fate-buttons hidden" id="fateButtons">
+        <button class="btn teal" id="truthBtn">Truth</button>
+        <button class="btn danger" id="dareBtn">Dare</button>
+      </div>
+
+      <div class="prompt-card hidden" id="promptCard">
+        <div class="prompt-kind" id="promptKind"></div>
+        <div class="prompt-text" id="promptText"></div>
+        <div class="prompt-actions">
+          <button class="btn teal" id="doneBtn">Done</button>
+          <button class="btn secondary" id="passBtn">Pass</button>
+        </div>
+      </div>
+
+      <div class="stat-line" id="statLine"></div>
+      <div class="result-actions" style="justify-content:center">
+        <button class="btn secondary small" id="backBtn">Change players</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="prompts.js"></script>
+  <script src="tod.js"></script>
+</body>
+</html>

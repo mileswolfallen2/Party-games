@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reaction Duel</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="reaction.css">
+</head>
+<body>
+  <div class="blob teal"></div>
+  <div class="blob violet"></div>
+
+  <div class="wrap narrow">
+    <div class="page-head">
+      <a class="back" href="../">&larr; All games</a>
+      <h1>Reaction Duel</h1>
+      <p>Two players, one screen. When the stage turns green, slam your half first. Jump early and you hand the round away.</p>
+    </div>
+
+    <section class="panel setup" id="setupScreen">
+      <h2>Players</h2>
+      <div class="name-grid">
+        <input type="text" id="leftName" placeholder="Left player" maxlength="12" value="Player 1">
+        <input type="text" id="rightName" placeholder="Right player" maxlength="12" value="Player 2">
+      </div>
+
+      <h2>Best of</h2>
+      <div class="round-picker" id="roundPicker"></div>
+
+      <button class="btn big teal" id="startBtn">Start duel</button>
+    </section>
+
+    <section class="panel duel hidden" id="duelScreen">
+      <div class="scoreboard">
+        <span><span class="side-name" id="sbLeft"></span><span class="pts" id="sbLeftPts">0</span></span>
+        <span style="color:var(--muted)">vs</span>
+        <span><span class="side-name" id="sbRight"></span><span class="pts" id="sbRightPts">0</span></span>
+      </div>
+
+      <div class="stage waiting" id="stage">
+        <div class="half left" id="halfLeft">
+          <div class="who" id="whoLeft"></div>
+          <div class="big-msg" id="msgLeft">Wait for green...</div>
+          <div class="ms" id="msLeft"></div>
+        </div>
+        <div class="half right" id="halfRight">
+          <div class="who" id="whoRight"></div>
+          <div class="big-msg" id="msgRight">Wait for green...</div>
+          <div class="ms" id="msRight"></div>
+        </div>
+      </div>
+
+      <div class="pips" id="pips"></div>
+      <div class="status-line" id="statusLine"></div>
+
+      <div class="result-actions hidden" id="resultActions">
+        <button class="btn teal" id="rematchBtn">Rematch</button>
+        <button class="btn secondary" id="newSetupBtn">Change players</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="reaction.js"></script>
+</body>
+</html>
